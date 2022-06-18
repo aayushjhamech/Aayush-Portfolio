@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "personal-portfoli-angular": {
+    "aayush-portfolio-angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/personal-portfoli-angular/browser",
+            "outputPath": "dist/aayush-portfolio-angular/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "personal-portfoli-angular:build"
+            "browserTarget": "aayush-portfolio-angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "personal-portfoli-angular:build:production"
+              "browserTarget": "aayush-portfolio-angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "personal-portfoli-angular:build"
+            "browserTarget": "aayush-portfolio-angular:build"
           }
         },
         "test": {
@@ -115,18 +115,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "personal-portfoli-angular:serve"
+            "devServerTarget": "aayush-portfolio-angular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "personal-portfoli-angular:serve:production"
+              "devServerTarget": "aayush-portfolio-angular:serve:production"
             }
           }
         },
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/personal-portfoli-angular/server",
+            "outputPath": "dist/aayush-portfolio-angular/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json"
           },
@@ -147,21 +147,21 @@
         "serve-ssr": {
           "builder": "@nguniversal/builders:ssr-dev-server",
           "options": {
-            "browserTarget": "personal-portfoli-angular:build",
-            "serverTarget": "personal-portfoli-angular:server"
+            "browserTarget": "aayush-portfolio-angular:build",
+            "serverTarget": "aayush-portfolio-angular:server"
           },
           "configurations": {
             "production": {
-              "browserTarget": "personal-portfoli-angular:build:production",
-              "serverTarget": "personal-portfoli-angular:server:production"
+              "browserTarget": "aayush-portfolio-angular:build:production",
+              "serverTarget": "aayush-portfolio-angular:server:production"
             }
           }
         },
         "prerender": {
           "builder": "@nguniversal/builders:prerender",
           "options": {
-            "browserTarget": "personal-portfoli-angular:build:production",
-            "serverTarget": "personal-portfoli-angular:server:production",
+            "browserTarget": "aayush-portfolio-angular:build:production",
+            "serverTarget": "aayush-portfolio-angular:server:production",
             "routes": [
               "/"
             ]
@@ -172,5 +172,5 @@
         }
       }
     }},
-  "defaultProject": "personal-portfoli-angular"
+  "defaultProject": "aayush-portfolio-angular"
 }
