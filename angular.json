@@ -70,7 +70,7 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "aayush-portfolio-angular:build:production"
+              "browserTarget": "aayush-portfolio-angular:build:pro0duction"
             }
           }
         },
