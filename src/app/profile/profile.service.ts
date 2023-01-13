@@ -29,14 +29,24 @@ export class ProfileService {
       desc: '',
       githurl: 'https://github.com/aayushjhamech/Python-Projects',
       imgUrl: 'assets/images/python-projects.jpg',
-      tech: 'React, Node, MongoDB, Express'
+      tech: 'Python, Angular'
     },
 
+    {
+      id: 3,
+      title: 'Online Store',
+      desc: '',
+      githurl: 'https://github.com/aayushjhamech/spring-boot-projects/tree/master/Online-Store',
+      imgUrl: 'assets/images/how-to-start-an-online-store-min.png',
+      tech: 'Python, Angular'
+    },
   ]
-  about = `Backend Developer with 3 years of experience, worked on projects with London Stock Exchange and Anthem. Skilled in Python, Java,
-  Exception Handling, AWS, Docker, MySQL and Data Structures. Short experience on Angular and React. Experience of working with international clients and agile teams`
+  about = `Full-Stack Java Developer with more than 3 years of experience,
+            worked in Financial and Health care domain. Skilled in Python, Java, Spring Boot, 
+            Exception Handling, AWS, Docker, MySQL and Data Structures. Hands-on experience in Angular and Full Stack Development. 
+            Experience of working with international clients and agile teams.`
 
-  resumeurl = "https://drive.google.com/file/d/154HGuvHTMv3OB-IA6PH_gmpjiGfwJBR1/view?usp=sharing"
+  resumeurl = "https://drive.google.com/file/d/1rdnxlbEw8_3kuej2_GxB_aJSVsrkF6Rp/view?usp=share_link"
 
   skillsData: any = [
     {
@@ -89,9 +99,9 @@ export class ProfileService {
       'education': 'Higher Secondary',
       'stream': 'Science and Mathematics',
       'institution': 'JVM SHYAMLI, RANCHI',
-      'info': ` The High School was mainly focused on physics, mathematics, and Chemistry
-      Completed my high school with 87.4%.`
-    },
+      'info': ` The High School was mainly focused on Physics, Mathematics, and Chemistry
+      Completed 12th Board with 87.4%.`
+    }
   ];
   exprienceData: any = [
     {
@@ -99,13 +109,14 @@ export class ProfileService {
       company: 'Deloitte India Consulting (USI)',
       location: 'Bengaluru, KA',
       timeline: 'Nov 2021- Present',
-      role: 'Backend Developer',
-      work: `Technologies : Python, Angular, AWS . 
-      Creating efficient rules using Python-Pandas, AWS S3 and Lambda .
-      Configuration of states to use as input in Python code .
-      API Testing with use cases using Postman .
-      Deploying code using AWS Lambda and Cloud9 .
-      Migration of application to production using BitBucket and OpenShift. 
+      role: 'Full-Stack Developer | Technologies : Java 11, Angular, AWS, SpringBoot, MongoDB',
+      work: `
+      Client interaction for gathering requirements .
+      Creating back-end APIs on SpringBooot for new features .
+      Wrote and integrated MongoDB queries for CRUD operations into SpringBoot .
+      Handle corresponding UI changes and integration .
+      Used Junits for test cases and Sonar for code quality and coverage .
+      Created multiple Jasper Reports for varying functionalities
   `
     },
 
@@ -114,14 +125,14 @@ export class ProfileService {
       company: 'Tata Consultancy Services',
       location: 'Bengaluru, KA',
       timeline: 'June 2019 - Oct 2021',
-      role: 'System Engineer',
-      work: `Technologies : Java, MySQL, Jenkins . 
-  
-  Refinitiv Project: Software Development and Testing from scratch .
-  Setup new backup system. 25% increased resiliency . 
-  Enhancement of existing code. 5% increased efficiency .
-  Automated 3 different functionalities .
-  Handle KTLOs and Production issues.`
+      role: 'System Engineer | Technologies : Java, MySQL, Jenkins',
+      work: ` 
+      Software Development and Testing from scratch .
+      Software Maintenance and Testing of monolithic Java application .
+      Built and released exchange pages using Core Java. 10% increased resiliency .
+      Updating Configuration files for applications .
+      Enhancement of existing code on Java and writing test cases. 20% increased efficiency .
+      Handle KTLOs and Production issues`
     },
 
 
