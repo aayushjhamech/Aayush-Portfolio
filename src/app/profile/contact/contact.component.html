@@ -9,54 +9,95 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="card-body">
-                                        <form name="form" (ngSubmit)="f.form.valid ; f.resetForm()" #f="ngForm" novalidate>
-                                            <div class="p pb-3">
-                                                <strong>Feel free to contact me </strong>
+                                      <form name="form" (ngSubmit)="onSubmit(f)" #f="ngForm" novalidate>
+                                        <div class="p pb-3">
+                                          <strong>Feel free to contact me </strong>
+                                        </div>
+
+                                        <!-- Success Message -->
+                                        <div *ngIf="successMessage" class="alert alert-success" role="alert">
+                                          {{successMessage}}
+                                        </div>
+
+                                        <!-- Error Message -->
+                                        <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+                                          {{errorMessage}}
+                                        </div>
+
+                                        <div class="row mb-3">
+                                          <div class="col">
+                                            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-user-circle"></i>
+                </span>
+                                              <input class="form-control" type="text" name="name" placeholder="Name"
+                                                     [(ngModel)]="model.name" #name="ngModel"
+                                                     [ngClass]="{ 'is-invalid': submitted && name.invalid }"
+                                                     required />
+                                              <div class="invalid-feedback" *ngIf="submitted && name.invalid">
+                                                Name is required
+                                              </div>
                                             </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon">
-                                    <i class="fa fa-user-circle"></i>
-                                  </span>
-                                                        <input class="form-control" type="text" name="name" placeholder="Name" [(ngModel)]="model.name" #name="ngModel" [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required />
-                                                    </div>
-                                                </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                          <div class="col">
+                                            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-file-text"></i>
+                </span>
+                                              <input class="form-control" type="text" name="subject" placeholder="Subject"
+                                                     [(ngModel)]="model.subject" #subject="ngModel"
+                                                     [ngClass]="{ 'is-invalid': submitted && subject.invalid }"
+                                                     required />
+                                              <div class="invalid-feedback" *ngIf="submitted && subject.invalid">
+                                                Subject is required
+                                              </div>
                                             </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon">
-                                    <i class="fa fa-file-text"></i>
-                                  </span>
-                                                        <input class="form-control" type="text" name="subject" placeholder="Subject" [(ngModel)]="model.subject" #subject="ngModel" [ngClass]="{ 'is-invalid': f.submitted && subject.invalid }" required />
-                                                    </div>
-                                                </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                          <div class="col">
+                                            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-envelope"></i>
+                </span>
+                                              <input class="form-control" type="text" name="email" placeholder="E-mail"
+                                                     [(ngModel)]="model.email" #email="ngModel"
+                                                     [ngClass]="{ 'is-invalid': submitted && email.invalid }"
+                                                     pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                                                     required />
+                                              <div class="invalid-feedback" *ngIf="submitted && email.invalid">
+                                                Valid email is required
+                                              </div>
                                             </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon">
-                                    <i class="fa fa-envelope"></i>
-                                  </span>
-                                                        <input class="form-control" type="text" name="email" placeholder="E-mail" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required
-                                                        />
-                                                    </div>
-                                                </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                          <div class="col">
+                                            <div class="form-group">
+                <textarea class="form-control" name="message" placeholder="Your Message"
+                          [(ngModel)]="model.message" #message="ngModel"
+                          [ngClass]="{ 'is-invalid': submitted && message.invalid }"
+                          required></textarea>
+                                              <div class="invalid-feedback" *ngIf="submitted && message.invalid">
+                                                Message is required
+                                              </div>
                                             </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
-                                                    <div class="form-group">
-                                                        <textarea class="form-control" name="message" placeholder="Your Message" [(ngModel)]="model.message" #message="ngModel" [ngClass]="{ 'is-invalid': f.submitted && message.invalid }" required></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <button class="btn btn-primary" type="submit">Send</button>
-                                                </div>
-                                            </div>
-                                        </form>
+                                          </div>
+                                        </div>
+
+                                        <div class="row">
+                                          <div class="col">
+                                            <button class="btn btn-primary" type="submit" [disabled]="isLoading">
+                                              {{isLoading ? 'Sending...' : 'Send'}}
+                                            </button>
+                                          </div>
+                                        </div>
+                                      </form>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -64,7 +105,7 @@
                                         <p class="mb-0">
                                             <strong>Phone</strong>
                                         </p>
-                                        <p class="pb-2">+91 8340766240</p>
+                                        <p class="pb-2">+91 8420880455</p>
                                         <p class="mb-0">
                                             <strong>Email</strong>
                                         </p>

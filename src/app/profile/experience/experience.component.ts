@@ -7,13 +7,11 @@ import { ProfileService } from '../profile.service';
   styleUrls: ['./experience.component.scss']
 })
 export class ExperienceComponent implements OnInit {
+  workexp: any = [];
 
-workexp
-  
-  constructor(private profileService:ProfileService) { }
-  
-    ngOnInit() {
-     
-      this.workexp =  this.profileService.exprience()
-    }
+  constructor(private profileService: ProfileService) { }
+
+  ngOnInit() {
+    this.workexp = this.profileService.experience();
+  }
 }
