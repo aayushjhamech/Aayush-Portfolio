@@ -5,8 +5,10 @@
 
 export const environment = {
   production: false,
-  //baseUrl : `${window.location.protocol}//${window.location.hostname}/portfolio/`,
-  //baseUrl : `http://localhost:4200/`,
+  // EmailJS config: replace these before production build.
+  emailJsServiceId: 'service_zc5e0pg',
+  emailJsTemplateId: 'template_bjvxd7f',
+  emailJsPublicKey: 'bABCPxr9MypjIe1RB',
 
 };
 

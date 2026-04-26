@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -142,25 +141,24 @@ export class ProfileService {
   }
 
 sendContactMessage(data: any): Observable<any> {
-  // Option 1: Using EmailJS (client-side email service)
-  // return this.http.post('https://api.emailjs.com/api/v1.0/email/send', {
-  //   service_id: 'your_service_id',
-  //   template_id: 'your_template_id',
-  //   user_id: 'your_user_id',
-  //   template_params: {
-  //     to_email: 'aayushjhamech@gmail.com',
-  //     from_name: data.name,
-  //     from_email: data.email,
-  //     subject: data.subject,
-  //     message: data.message
-  //   }
-  // });
+      const payload = {
+        service_id: environment.emailJsServiceId,
+        template_id: environment.emailJsTemplateId,
+        user_id: environment.emailJsPublicKey,
+        template_params: {
+          to_email: 'aayushjhamech@gmail.com',
+          from_name: data.name,
+          from_email: data.email,
+          reply_to: data.email,
+          subject: data.subject,
+          message: data.message,
+          website: 'aayushjha.gt.tc'
+        }
+      };
 
-  // Option 2: Using your backend API
-  // return this.http.post(this.baseUrl + 'contact', data);
-
-  // For now, return success (you need to implement one of the above)
-  return of({ success: true, message: 'Message would be sent' });
+      return this.http.post('https://api.emailjs.com/api/v1.0/email/send', payload, {
+        responseType: 'text'
+      });
 }
 
 }
